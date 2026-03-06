@@ -5,9 +5,9 @@
 export const SITE_CONFIG = {
   name: "AI Agency",
   description:
-    "We implement AI solutions with proven ROI. Customer service AI ($40M saved), code generation ($2B ARR), voice agents (391% ROI), legal AI (284% ROI), healthcare AI (451% ROI), privacy-first local hosting. We hire the right talent to deliver.",
+    "We build AI that makes money. Klarna saved $40M. Cursor is at $2B ARR. Voice agents get 391% ROI. We find people who've done it and get them to build yours.",
   longDescription:
-    "We implement everything: Customer service AI like Klarna ($40M savings). Code generation like Cursor ($2B ARR). Voice agents (391% ROI, <6 month payback). Legal AI (284% ROI). Healthcare AI (451% ROI). Privacy-first local hosting (52-75% savings vs cloud). RAG ($26M annual savings). We hire AI specialists who've shipped these use cases before. Production-ready in 7 days. First 100 launch partners get 50% off.",
+    "Klarna saved $40M with customer service AI. Cursor is at $2B ARR with code generation. Voice agents get 391% ROI. Legal AI: 284% ROI. Healthcare AI: 451% ROI. Local hosting saves 52-75% vs cloud. We find people who've built this stuff and get them to build yours. No BS. First 100 clients get 50% off.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),

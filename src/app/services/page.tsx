@@ -193,7 +193,7 @@ export default function ServicesPage() {
               <span className="text-oc-cyan">We hire the right talent to deliver.</span>
             </h1>
             <p className="text-xl text-oc-cream-muted max-w-2xl">
-              Customer service AI that saved Klarna $40M. Code generation like Cursor ($2B ARR). Voice agents with 391% ROI. RAG, legal AI, privacy-first local hosting. If it's proven to work, we can build it—and we hire the specialists who know how.
+              Klarna saved $40M with customer service AI. Cursor is at $2B ARR with code generation. Voice agents get 391% ROI. If it works, we can build it. We hire people who've done it before.
             </p>
           </ScrollReveal>
         </div>
@@ -249,13 +249,13 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <ScrollReveal>
             <p className="text-sm font-medium tracking-widest uppercase text-oc-cyan mb-4">
-              Proven Results
+              What We Build
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              What we implement — backed by real ROI
+              Here's what we can build
             </h2>
             <p className="text-oc-cream-muted max-w-3xl mb-12">
-              These aren't theory. These are the 13 AI use cases with proven enterprise ROI. We hire the specialists who've shipped them before and implement them for you.
+              These aren't ideas. Klarna saved $40M with customer service AI. Cursor is at $2B ARR with code generation. Voice agents get 391% ROI. We find people who've built these before and get them to build yours.
             </p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -304,7 +304,7 @@ export default function ServicesPage() {
                 Need something else?
               </p>
               <p className="text-oc-cream-muted text-sm mb-4">
-                If it's proven to work and there's real ROI, we can build it. We hire the right specialists to deliver whatever you need.
+                If it works and makes money, we can build it. We hire people who know how.
               </p>
               <Button href="/book-audit" variant="primary" size="md" className="group">
                 Book Free Consultation

@@ -21,15 +21,15 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.1}>
             <h1 className="font-display text-5xl font-bold tracking-tight text-oc-cream sm:text-6xl md:text-7xl">
-              We implement AI solutions.
+              We build AI that makes money.
               <br />
-              <span className="gradient-text">We hire the right talent to deliver.</span>
+              <span className="gradient-text">We hire people who've done it before.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-oc-cream-muted md:text-xl">
-              Customer service AI like Klarna ($40M saved). Code generation like Cursor ($2B ARR). Voice agents (391% ROI). Privacy-first local hosting. We build anything with proven ROI—and we hire the specialists who can deliver it.
+              Klarna saved $40M. Cursor is at $2B ARR. Voice agents get 391% ROI. We find the people who built this stuff and get them to build yours.
             </p>
           </ScrollReveal>
 
@@ -97,13 +97,13 @@ export default function HomePage() {
           <div className="mx-auto max-w-4xl text-center">
             <ScrollReveal>
               <h2 className="font-display text-3xl font-bold text-oc-cream md:text-4xl lg:text-5xl">
-                We implement AI solutions. OpenClaw is one of many.
+                OpenClaw is one thing. We build everything.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-                Enterprises want: privacy-first local AI, voice agents, RAG knowledge bases, customer service automation, coding copilots, document processing. We implement what people actually want—and OpenClaw security is one viral use case we fix.
+                Customer service AI. Voice agents. RAG. Coding copilots. Legal, healthcare. Privacy-first local hosting. If someone's made money with it, we can build it.
               </p>
             </ScrollReveal>
 
@@ -133,7 +133,7 @@ export default function HomePage() {
 
             <ScrollReveal delay={0.4}>
               <Link href="/services" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-oc-cyan transition-all hover:gap-3">
-                See all 13 validated use cases
+                See what we can build
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -268,10 +268,10 @@ export default function HomePage() {
               Why us
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-              We implement anything with proven ROI. Customer service AI ($40M saved). Code generation ($2B ARR). Voice agents (391% ROI). Legal, healthcare, privacy-first local hosting. We hire AI specialists who've shipped these systems before—and we'll hire the right talent for your use case.
+              Klarna saved $40M with customer service AI. Cursor is at $2B ARR. Voice agents get 391% ROI. We find people who've built this and get them to build yours. If it makes money, we can build it.
             </p>
             <p className="mt-4 text-oc-cream-muted">
-              We're new. We have 0 clients today. We're transparent about that. What we offer: deep technical expertise, access to the right specialists, and a commitment to making your deployment successful.
+              We have 0 clients. We're new. We're not hiding that. But we can access the people who've actually shipped these systems. That's what you're paying for.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/careers" className="text-sm font-medium text-oc-cyan hover:underline">
@@ -299,10 +299,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-display text-3xl font-bold text-oc-cream md:text-4xl lg:text-5xl">
-              Ready to be a launch partner?
+              Want to talk?
             </h2>
             <p className="mt-4 text-lg text-oc-cream-muted">
-              Book a free consultation. We'll assess your needs, recommend the right solution, and if needed—hire the specialists who can build it. No obligations.
+              We'll figure out what you need and find people who can build it. No BS.
             </p>
             <div className="mt-10">
               <Link href="/book-audit" className="btn-primary text-lg">
