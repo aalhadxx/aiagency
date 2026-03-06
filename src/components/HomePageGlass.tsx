@@ -3,12 +3,13 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { Lock, Bot, Shield, Settings } from "lucide-react";
+import { Lock, Bot, Shield, Settings, ArrowRight, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { StatCard } from "@/components/StatCard";
 import { TestimonialCard, ClientLogos } from "@/components/social-proof";
 import { testimonials } from "@/data/testimonials";
 import { caseStudies } from "@/data/case-studies";
+import { Button } from "@/components/ui";
 import type { Post } from "@/lib/blog";
 
 const MeshGradient = dynamic(
@@ -24,7 +25,7 @@ const SERVICES = [
     desc: "Security hardening, network isolation, credential vaults, audit logging, SOC 2-ready setup. 7-day implementation.",
     price: "$5K – $15K",
     href: "/services",
-    cta: "Learn more →",
+    cta: "Learn more",
   },
   {
     icon: Bot,
@@ -32,7 +33,7 @@ const SERVICES = [
     desc: "Multi-agent orchestration, custom skills, safety guardrails, human-in-the-loop approvals, domain sandboxing.",
     price: "$3K – $10K per agent",
     href: "/services",
-    cta: "Learn more →",
+    cta: "Learn more",
   },
   {
     icon: Shield,
@@ -40,7 +41,7 @@ const SERVICES = [
     desc: "Vulnerability assessment, fix exposed instances, policy-based safety controls, malicious plugin removal.",
     price: "$2K – $5K",
     href: "/book-audit",
-    cta: "Book free audit →",
+    cta: "Book free audit",
   },
   {
     icon: Settings,
@@ -48,7 +49,7 @@ const SERVICES = [
     desc: "Ongoing monitoring, updates, incident response, skill marketplace vetting, performance optimization.",
     price: "$500 – $2K/month",
     href: "/services",
-    cta: "Learn more →",
+    cta: "Learn more",
   },
 ];
 
@@ -70,6 +71,12 @@ const RISK_CARDS = [
   },
 ];
 
+const PRICING_PREVIEW = [
+  { name: "Starter", price: "From $2K", desc: "Security audit + remediation" },
+  { name: "Professional", price: "From $5K", desc: "Secure deployment" },
+  { name: "Enterprise", price: "Custom", desc: "Full suite + managed" },
+];
+
 type HomePageGlassProps = {
   posts: Post[];
 };
@@ -77,7 +84,7 @@ type HomePageGlassProps = {
 export function HomePageGlass({ posts }: HomePageGlassProps) {
   return (
     <main className="min-h-screen bg-oc-bg text-oc-cream overflow-x-hidden scroll-smooth">
-      {/* 1. Hero Section */}
+      {/* 1. Hero — Immediate value, single CTA */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 opacity-[0.12]">
           <MeshGradient />
@@ -96,64 +103,67 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
             transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
             className="max-w-4xl"
           >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-oc-cyan/30 bg-oc-cyan/10 mb-8">
+              <span className="w-2 h-2 rounded-full bg-oc-cyan animate-pulse" />
+              <span className="text-sm font-medium text-oc-cyan">
+                Enterprise OpenClaw — Secure in 7 days
+              </span>
+            </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
               <span className="block text-oc-cream">
-                Secure OpenClaw Deployment for Enterprise
+                Deploy AI agents.
+              </span>
+              <span className="block text-oc-cyan">
+                Without the risk.
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-oc-cyan mb-8">
-              OpenClaw: The open-source autonomous AI agent platform—now enterprise-ready.
+            <p className="text-lg md:text-xl text-oc-cream-muted max-w-2xl leading-relaxed mb-10">
+              We make OpenClaw safe for enterprise. Security hardening, compliance-ready infrastructure, and production-grade guardrails—deployed in 7 days.
             </p>
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 mb-12 max-w-2xl">
-              <p className="text-oc-cream-muted text-lg leading-relaxed">
-                We make OpenClaw safe for enterprise. Deploy autonomous AI agents with
-                enterprise security, compliance-ready infrastructure, and production-grade
-                safety guardrails in 7 days.
-              </p>
-            </div>
             <div className="flex flex-wrap gap-4">
-              <Link
+              <Button
                 href="/book-audit"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-oc-cyan text-oc-bg font-semibold rounded-xl transition-all hover:bg-oc-cyan-dim hover:gap-4 border border-oc-cyan/30"
+                variant="primary"
+                size="lg"
+                className="group"
               >
-                Book Audit
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center px-8 py-4 border border-white/20 text-oc-cream font-medium rounded-xl transition-all hover:border-oc-cyan/50 hover:text-oc-cyan hover:bg-white/5"
-              >
+                Book Free Security Audit
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button href="/services" variant="outline" size="lg">
                 View Services
-              </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* 2. Trust Bar with Animated Stats */}
-      <section className="relative py-20 border-y border-white/10">
+      {/* 2. Trust Bar */}
+      <section className="relative py-16 md:py-20 border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
             <StatCard value="50+" label="Secure Deployments" delay={0} />
-            <StatCard value="3x" label="ROI in 90 Days" delay={0.1} />
+            <StatCard value="3×" label="ROI in 90 Days" delay={0.1} />
             <StatCard value="7" label="Days to Production" delay={0.2} />
             <StatCard value="SOC 2" label="Compliant" delay={0.3} />
           </div>
         </div>
       </section>
 
-      {/* 3. Social Proof: Client Logos + Testimonial */}
-      <section className="py-24 relative">
+      {/* 3. Social Proof — Logos + Testimonial */}
+      <section className="py-20 md:py-24 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-oc-cream">
+            <p className="text-sm font-medium tracking-widest uppercase text-oc-cyan mb-4">
               Trusted by leading enterprises
-            </h2>
-            <p className="text-oc-cream-muted mb-12 max-w-xl">
-              Companies that deployed OpenClaw safely with our help
             </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-oc-cream">
+              Companies that deploy OpenClaw safely
+            </h2>
           </ScrollReveal>
-          <ClientLogos />
+          <div className="mt-8">
+            <ClientLogos />
+          </div>
           <ScrollReveal delay={0.2} className="mt-16">
             <TestimonialCard testimonial={testimonials[0]} delay={0} />
           </ScrollReveal>
@@ -161,20 +171,20 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
       </section>
 
       {/* 4. Services Grid */}
-      <section className="py-32 relative">
+      <section className="py-24 md:py-32 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-8 mb-20">
+          <div className="grid lg:grid-cols-12 gap-8 mb-16">
             <ScrollReveal className="lg:col-span-6">
-              <span className="text-oc-cyan text-sm font-medium tracking-widest uppercase mb-4 block">
+              <p className="text-sm font-medium tracking-widest uppercase text-oc-cyan mb-4">
                 What We Build
-              </span>
+              </p>
               <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-oc-cream">
                 Production-grade AI automation enterprises trust
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2} className="lg:col-span-6 flex items-end">
               <p className="text-oc-cream-muted text-lg">
-                Security hardening, custom agents, audits, and managed services
+                Security hardening, custom agents, audits, and managed services—all designed for the enterprise.
               </p>
             </ScrollReveal>
           </div>
@@ -184,7 +194,7 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
               <ScrollReveal key={service.title} delay={i * 0.1}>
                 <Link
                   href={service.href}
-                  className="group block p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-oc-cyan/30 transition-all duration-500 h-full"
+                  className="group block p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-oc-cyan/30 transition-all duration-300 h-full"
                 >
                   <service.icon className="w-10 h-10 text-oc-cyan mb-6 group-hover:scale-110 transition-transform" />
                   <h3 className="font-display text-xl font-bold mb-4 text-oc-cream group-hover:text-oc-cyan transition-colors">
@@ -194,23 +204,29 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
                     {service.desc}
                   </p>
                   <div className="text-oc-cyan font-semibold mb-2">{service.price}</div>
-                  <span className="text-sm text-oc-cream-muted group-hover:text-oc-cyan transition-colors">
+                  <span className="text-sm text-oc-cream-muted group-hover:text-oc-cyan transition-colors inline-flex items-center gap-1">
                     {service.cta}
+                    <ArrowRight className="w-3 h-3" />
                   </span>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
+          <ScrollReveal delay={0.4} className="mt-10 text-center">
+            <Button href="/services" variant="outline" size="md">
+              Compare all services
+            </Button>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* 5. The Problem We Solve */}
-      <section className="py-32 relative bg-oc-surface/50">
+      {/* 5. Why Us — Differentiation */}
+      <section className="py-24 md:py-32 relative bg-oc-surface/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <ScrollReveal>
-            <span className="text-oc-coral text-sm font-medium tracking-widest uppercase mb-4 block">
+            <p className="text-oc-coral text-sm font-medium tracking-widest uppercase mb-4">
               The Problem We Solve
-            </span>
+            </p>
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-oc-cream mb-16">
               Why OpenClaw was banned—and how we fix it
             </h2>
@@ -218,7 +234,7 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
           <div className="grid md:grid-cols-3 gap-6">
             {RISK_CARDS.map((card, i) => (
               <ScrollReveal key={card.num} delay={i * 0.1}>
-                <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-oc-coral/30 transition-all">
+                <div className="p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-oc-coral/30 transition-all">
                   <div className="text-oc-coral font-bold text-sm tracking-widest mb-3">
                     {card.num}
                   </div>
@@ -236,27 +252,37 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
               className="inline-flex items-center gap-2 text-oc-cyan font-medium hover:gap-4 transition-all"
             >
               Read our OpenClaw security analysis
-              <span>→</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </ScrollReveal>
         </div>
       </section>
 
       {/* 6. Case Studies */}
-      <section className="py-32 relative">
+      <section className="py-24 md:py-32 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <ScrollReveal>
-            <span className="text-oc-cyan text-sm font-medium tracking-widest uppercase mb-4 block">
-              Case Studies
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-oc-cream mb-16">
-              Real results from real deployments
-            </h2>
-          </ScrollReveal>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+            <ScrollReveal>
+              <p className="text-sm font-medium tracking-widest uppercase text-oc-cyan mb-4">
+                Case Studies
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-oc-cream">
+                Real results from real deployments
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <Button href="/case-studies" variant="outline" size="md">
+                View all case studies
+              </Button>
+            </ScrollReveal>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             {caseStudies.slice(0, 3).map((study, i) => (
               <ScrollReveal key={study.id} delay={i * 0.1}>
-                <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-oc-cyan/30 transition-all h-full flex flex-col">
+                <Link
+                  href="/case-studies"
+                  className="block p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-oc-cyan/30 hover:bg-white/10 transition-all h-full"
+                >
                   {study.metric && (
                     <div className="text-oc-cyan font-bold text-2xl mb-4">
                       {study.metric}
@@ -272,38 +298,70 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
                   <ul className="mt-4 space-y-2">
                     {study.results.slice(0, 2).map((r, j) => (
                       <li key={j} className="text-oc-cyan/90 text-sm flex items-center gap-2">
-                        <span className="text-oc-cyan">✓</span> {r}
+                        <Check className="w-4 h-4 text-oc-cyan flex-shrink-0" />
+                        {r}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 7. Latest Blog Posts - only if we have posts */}
+      {/* 7. Pricing Preview */}
+      <section className="py-24 md:py-32 relative border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <ScrollReveal>
+            <p className="text-sm font-medium tracking-widest uppercase text-oc-cyan mb-4">
+              Pricing
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-oc-cream mb-4">
+              Clear tiers. No surprises.
+            </h2>
+            <p className="text-oc-cream-muted text-lg max-w-xl mb-12">
+              Start with a free audit or jump straight to deployment. We'll help you choose.
+            </p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-6">
+            {PRICING_PREVIEW.map((tier, i) => (
+              <ScrollReveal key={tier.name} delay={i * 0.1}>
+                <div className="p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl">
+                  <h3 className="font-display text-xl font-bold text-oc-cream mb-2">
+                    {tier.name}
+                  </h3>
+                  <div className="text-oc-cyan font-bold text-2xl mb-2">{tier.price}</div>
+                  <p className="text-oc-cream-muted text-sm">{tier.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={0.3} className="mt-10 text-center">
+            <Button href="/pricing" variant="outline" size="md">
+              Compare pricing
+            </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* 8. Blog Preview */}
       {posts.length > 0 && (
-        <section className="py-32 relative border-t border-white/10">
+        <section className="py-24 md:py-32 relative border-t border-white/10">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
               <ScrollReveal>
-                <span className="text-oc-cyan text-sm font-medium tracking-widest uppercase mb-4 block">
+                <p className="text-sm font-medium tracking-widest uppercase text-oc-cyan mb-4">
                   Latest Insights
-                </span>
+                </p>
                 <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-oc-cream">
                   From the blog
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-oc-cyan font-medium hover:gap-4 transition-all"
-                >
+                <Button href="/blog" variant="outline" size="md">
                   View all articles
-                  <span>→</span>
-                </Link>
+                </Button>
               </ScrollReveal>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
@@ -311,10 +369,10 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
                 <ScrollReveal key={post.slug} delay={i * 0.1}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="block p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-oc-cyan/30 hover:bg-white/10 transition-all h-full"
+                    className="block p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-oc-cyan/30 hover:bg-white/10 transition-all h-full"
                   >
                     <time className="text-oc-cream-muted text-sm">{post.meta.date}</time>
-                    <h3 className="font-display text-xl font-bold text-oc-cream mt-2 mb-3 group-hover:text-oc-cyan">
+                    <h3 className="font-display text-xl font-bold text-oc-cream mt-2 mb-3">
                       {post.meta.title}
                     </h3>
                     <p className="text-oc-cream-muted text-sm line-clamp-3">
@@ -328,8 +386,8 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
         </section>
       )}
 
-      {/* 8. Final CTA */}
-      <section className="relative py-32 overflow-hidden">
+      {/* 9. Final CTA */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
@@ -340,24 +398,23 @@ export function HomePageGlass({ posts }: HomePageGlassProps) {
         <div className="absolute inset-0 opacity-[0.08]">
           <MeshGradient />
         </div>
-        <div className="relative max-w-4xl mx-auto px-6 lg:px-12">
+        <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <ScrollReveal>
-            <div className="p-12 md:p-16 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl text-center">
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-oc-cream mb-6">
-                Ready to deploy OpenClaw safely?
-              </h2>
-              <p className="text-xl text-oc-cream-muted max-w-2xl mx-auto mb-10">
-                Get a free 30-minute security consultation. We&apos;ll assess your needs
-                and show you exactly how to deploy autonomous agents without the risk.
-              </p>
-              <Link
-                href="/book-audit"
-                className="group inline-flex items-center gap-2 px-10 py-5 bg-oc-cyan text-oc-bg font-semibold text-lg rounded-xl transition-all hover:bg-oc-cyan-dim hover:gap-4"
-              >
-                Book Your Free Audit Now
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-            </div>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-oc-cream mb-6">
+              Ready to deploy OpenClaw safely?
+            </h2>
+            <p className="text-xl text-oc-cream-muted max-w-2xl mx-auto mb-10">
+              Get a free 30-minute security consultation. We'll assess your needs and show you exactly how to deploy autonomous agents without the risk.
+            </p>
+            <Button
+              href="/book-audit"
+              variant="primary"
+              size="xl"
+              className="group"
+            >
+              Book Your Free Audit Now
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Button>
           </ScrollReveal>
         </div>
       </section>

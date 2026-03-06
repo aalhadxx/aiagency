@@ -6,9 +6,11 @@ import { useState } from "react";
 
 const FOOTER_LINKS = [
   { href: "/services", label: "Services" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
+  { href: "/manifesto", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const SOCIAL_LINKS = [

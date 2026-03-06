@@ -8,7 +8,10 @@ import { ThemeSwitcher } from "./theme-switcher";
 
 const NAV_LINKS = [
   { href: "/services", label: "Services" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
+  { href: "/careers", label: "Careers" },
   { href: "/manifesto", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -19,12 +22,12 @@ export function Navigation() {
 
   return (
     <header
-      className="theme-nav sticky top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-300"
+      className="theme-nav sticky top-0 z-[100] w-full border-b backdrop-blur-xl transition-all duration-300"
       style={{
-        backgroundColor: "var(--theme-nav-bg)",
-        backdropFilter: `blur(var(--theme-nav-blur))`,
-        WebkitBackdropFilter: `blur(var(--theme-nav-blur))`,
-        borderColor: "var(--theme-border)",
+        backgroundColor: "var(--oc-surface)",
+        backdropFilter: `blur(20px)`,
+        WebkitBackdropFilter: `blur(20px)`,
+        borderColor: "var(--oc-border)",
       }}
     >
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 py-6 md:h-20 md:px-6">

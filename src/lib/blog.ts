@@ -53,40 +53,45 @@ function getAuthorObject(author: unknown): Author {
 }
 
 function loadAllPosts(): Post[] {
-    if (!fs.existsSync(contentDirectory)) {
+    try {
+        if (!fs.existsSync(contentDirectory)) {
+            return [];
+        }
+
+        const files = fs.readdirSync(contentDirectory);
+
+        const posts: Post[] = [];
+        for (const fileName of files) {
+            if (!fileName.endsWith('.mdx') || fileName.startsWith('_')) continue;
+            try {
+                const slug = fileName.replace(/\.mdx$/, '');
+                const filePath = path.join(contentDirectory, fileName);
+                const fileContent = fs.readFileSync(filePath, 'utf-8');
+                const { data, content } = matter(fileContent);
+
+                const meta = data as Record<string, unknown>;
+                const postMeta: PostMeta = {
+                    title: (meta.title as string) || 'Untitled',
+                    excerpt: (meta.excerpt as string) || '',
+                    date: (meta.date as string) || '',
+                    author: meta.author as string | Author,
+                    tags: Array.isArray(meta.tags) ? (meta.tags as string[]) : [],
+                    category: meta.category as string | undefined,
+                    coverImage: meta.coverImage as string | undefined,
+                    featured: meta.featured as boolean | undefined,
+                };
+
+                posts.push({ slug, meta: postMeta, content });
+            } catch {
+                // Skip malformed or unreadable files (e.g. ENOENT in production if not bundled)
+                continue;
+            }
+        }
+
+        return posts.sort((a, b) => (a.meta.date > b.meta.date ? -1 : 1));
+    } catch {
         return [];
     }
-
-    const files = fs.readdirSync(contentDirectory);
-
-    const posts = files
-        .filter((f) => f.endsWith('.mdx'))
-        .map((fileName) => {
-            const slug = fileName.replace(/\.mdx$/, '');
-            const filePath = path.join(contentDirectory, fileName);
-            const fileContent = fs.readFileSync(filePath, 'utf-8');
-            const { data, content } = matter(fileContent);
-
-            const meta = data as Record<string, unknown>;
-            const postMeta: PostMeta = {
-                title: (meta.title as string) || 'Untitled',
-                excerpt: (meta.excerpt as string) || '',
-                date: (meta.date as string) || '',
-                author: meta.author as string | Author,
-                tags: Array.isArray(meta.tags) ? (meta.tags as string[]) : [],
-                category: meta.category as string | undefined,
-                coverImage: meta.coverImage as string | undefined,
-                featured: meta.featured as boolean | undefined,
-            };
-
-            return {
-                slug,
-                meta: postMeta,
-                content,
-            };
-        });
-
-    return posts.sort((a, b) => (a.meta.date > b.meta.date ? -1 : 1));
 }
 
 export function getPosts(): Post[] {

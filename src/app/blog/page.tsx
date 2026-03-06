@@ -134,14 +134,12 @@ export default async function BlogPage({ searchParams }: PageProps) {
                                         </div>
                                         <div className="flex flex-wrap gap-2 mt-4">
                                             {featuredPost.meta.tags?.slice(0, 4).map((t) => (
-                                                <Link
+                                                <span
                                                     key={t}
-                                                    href={`/blog?tag=${encodeURIComponent(t)}`}
-                                                    onClick={(e) => e.stopPropagation()}
-                                                    className="text-xs px-2.5 py-1 rounded-lg bg-white/5 text-oc-cream-muted hover:bg-oc-cyan/20 hover:text-oc-cyan transition-colors"
+                                                    className="text-xs px-2.5 py-1 rounded-lg bg-white/5 text-oc-cream-muted"
                                                 >
                                                     {t}
-                                                </Link>
+                                                </span>
                                             ))}
                                         </div>
                                     </div>
@@ -211,14 +209,12 @@ function PostCard({ post, index }: { post: Post; index: number }) {
                         </p>
                         <div className="mt-4 flex flex-wrap gap-2">
                             {post.meta.tags?.slice(0, 3).map((t) => (
-                                <Link
+                                <span
                                     key={t}
-                                    href={`/blog?tag=${encodeURIComponent(t)}`}
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="text-xs px-2 py-1 rounded-lg bg-white/5 text-oc-cream-muted hover:bg-oc-cyan/20 hover:text-oc-cyan transition-colors"
+                                    className="text-xs px-2 py-1 rounded-lg bg-white/5 text-oc-cream-muted"
                                 >
                                     {t}
-                                </Link>
+                                </span>
                             ))}
                         </div>
                     </div>

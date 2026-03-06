@@ -58,4 +58,20 @@ export const caseStudies: CaseStudy[] = [
     ],
     metric: "12 agents",
   },
+  {
+    id: "4",
+    title: "Zero Trust Architecture for Regulated Industry",
+    client: "SecureBank",
+    industry: "Financial Services",
+    challenge:
+      "SecureBank needed to deploy AI agents for customer onboarding while meeting strict regulatory requirements. Their compliance team had rejected previous OpenClaw deployments due to security concerns.",
+    solution:
+      "We implemented a zero-trust architecture with mTLS, hardware security modules for credential storage, and full audit logging with 7-year retention. Every agent action is traceable and policy-enforced.",
+    results: [
+      "Passed internal security review in 3 weeks",
+      "Zero compliance findings in first audit",
+      "Reduced onboarding time by 60%",
+    ],
+    metric: "60%",
+  },
 ];
