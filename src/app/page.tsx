@@ -21,15 +21,15 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.1}>
             <h1 className="font-display text-5xl font-bold tracking-tight text-oc-cream sm:text-6xl md:text-7xl">
-              We build AI that makes money.
+              We copy AI that's already working.
               <br />
-              <span className="gradient-text">We hire people who've done it before.</span>
+              <span className="gradient-text">Then rebuild it for you.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-oc-cream-muted md:text-xl">
-              Klarna saved $40M. Cursor is at $2B ARR. Voice agents get 391% ROI. We find the people who built this stuff and get them to build yours.
+              Klarna saved $40M with customer service AI. Cursor is at $2B ARR. Voice agents get 391% ROI. We find the people who built this and get them to build yours.
             </p>
           </ScrollReveal>
 

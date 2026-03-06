@@ -252,10 +252,10 @@ export default function ServicesPage() {
               What We Build
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Here's what we can build
+              Here's what's already working
             </h2>
             <p className="text-oc-cream-muted max-w-3xl mb-12">
-              These aren't ideas. Klarna saved $40M with customer service AI. Cursor is at $2B ARR with code generation. Voice agents get 391% ROI. We find people who've built these before and get them to build yours.
+              Klarna saved $40M with customer service AI. Cursor is at $2B ARR with code generation. Voice agents get 391% ROI. We find who built these and get them to build yours.
             </p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
