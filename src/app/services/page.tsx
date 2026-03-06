@@ -252,10 +252,10 @@ export default function ServicesPage() {
               What We Build
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              What's already making money
+              13 systems. Real results.
             </h2>
             <p className="text-oc-cream-muted max-w-3xl mb-12">
-              These aren't concepts. Klarna saved $40M. Cursor is at $2B ARR. Voice agents get 391% ROI. We can build any of this for you.
+              Customer service AI: $40M saved. Code generation: $2B ARR. Voice agents: 391% ROI. Legal: 284% ROI. Healthcare: 451% ROI. RAG: $26M saved. Privacy-first local: 52-75% cheaper.
             </p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -304,7 +304,7 @@ export default function ServicesPage() {
                 Need something else?
               </p>
               <p className="text-oc-cream-muted text-sm mb-4">
-                If it's making money somewhere else, we can build it for you.
+                Need something else? We build AI systems that work.
               </p>
               <Button href="/book-audit" variant="primary" size="md" className="group">
                 Book Free Consultation

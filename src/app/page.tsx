@@ -21,15 +21,15 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.1}>
             <h1 className="font-display text-5xl font-bold tracking-tight text-oc-cream sm:text-6xl md:text-7xl">
-              Customer service AI. Voice agents. Code generation.
+              AI that answers calls.
               <br />
-              <span className="gradient-text">Klarna saved $40M. Cursor hit $2B ARR.</span>
+              <span className="gradient-text">AI that writes code. AI that reads legal contracts.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-oc-cream-muted md:text-xl">
-              Customer service AI. Voice agents. Code generation. Legal, healthcare. Privacy-first local hosting. If someone's making millions with it, we can build it for you.
+              Customer service AI. Voice agents. Code generation. RAG. Legal AI. Healthcare AI. Privacy-first local hosting. We build it all.
             </p>
           </ScrollReveal>
 
@@ -97,22 +97,22 @@ export default function HomePage() {
           <div className="mx-auto max-w-4xl text-center">
             <ScrollReveal>
               <h2 className="font-display text-3xl font-bold text-oc-cream md:text-4xl lg:text-5xl">
-                These companies are printing money with AI.
+                13 AI systems we can build for you.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-                Klarna: $40M saved. Cursor: $2B ARR. Voice agents: 391% ROI. Legal AI: 284% ROI. Healthcare AI: 451% ROI. This isn't theory. It's happening right now.
+                Customer service AI. Voice agents that answer calls. Code generation. Document processing with RAG. Legal contract analysis. Healthcare clinical notes. Privacy-first local hosting.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <div className="mt-12 grid gap-6 md:grid-cols-3">
                 {[
-                  { stat: '$40M', desc: 'Klarna saved with customer service AI. 700 FTEs replaced, 82% faster resolution' },
-                  { stat: '391% ROI', desc: 'Voice agents: payback <6 months, $10.3M saved over 3 years (PolyAI Forrester)' },
-                  { stat: '$2B ARR', desc: 'Cursor-style code generation. 55% faster tasks, 84% more successful builds' },
+                  { stat: 'Customer Service', desc: 'AI that handles support tickets, chat, email. 24/7. Instant responses.' },
+                  { stat: 'Voice Agents', desc: 'AI that answers phone calls. Sales, support, scheduling. Natural conversation.' },
+                  { stat: 'Code Generation', desc: 'AI that writes code. Faster development. Fewer bugs.' },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -268,7 +268,7 @@ export default function HomePage() {
               Why us
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-              We have 0 clients. We're new. But these systems exist. They're making millions. We can build them for you.
+              We're new. 0 clients. But these 13 systems are real and making millions. We can build any of them.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/careers" className="text-sm font-medium text-oc-cyan hover:underline">
