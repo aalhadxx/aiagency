@@ -21,9 +21,9 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.1}>
             <h1 className="font-display text-5xl font-bold tracking-tight text-oc-cream sm:text-6xl md:text-7xl">
-              Klarna saved $40M with AI.
+              Customer service AI. Voice agents. Code generation.
               <br />
-              <span className="gradient-text">You can too.</span>
+              <span className="gradient-text">Klarna saved $40M. Cursor hit $2B ARR.</span>
             </h1>
           </ScrollReveal>
 
@@ -103,7 +103,7 @@ export default function HomePage() {
 
             <ScrollReveal delay={0.1}>
               <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-                Customer service AI. Voice agents. RAG. Coding copilots. Legal, healthcare. Privacy-first local hosting. If someone's made money with it, we can build it.
+                Klarna: $40M saved. Cursor: $2B ARR. Voice agents: 391% ROI. Legal AI: 284% ROI. Healthcare AI: 451% ROI. This isn't theory. It's happening right now.
               </p>
             </ScrollReveal>
 
@@ -268,10 +268,7 @@ export default function HomePage() {
               Why us
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-              Klarna saved $40M with customer service AI. Cursor is at $2B ARR. Voice agents get 391% ROI. We find people who've built this and get them to build yours. If it makes money, we can build it.
-            </p>
-            <p className="mt-4 text-oc-cream-muted">
-              We have 0 clients. We're new. We're not hiding that. But we can access the people who've actually shipped these systems. That's what you're paying for.
+              We have 0 clients. We're new. But these systems exist. They're making millions. We can build them for you.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/careers" className="text-sm font-medium text-oc-cyan hover:underline">
