@@ -21,15 +21,15 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.1}>
             <h1 className="font-display text-5xl font-bold tracking-tight text-oc-cream sm:text-6xl md:text-7xl">
-              AI that answers calls.
+              AI that answers your emails.
               <br />
-              <span className="gradient-text">AI that writes code. AI that reads legal contracts.</span>
+              <span className="gradient-text">AI that handles customer support. AI that writes your marketing.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-oc-cream-muted md:text-xl">
-              Customer service AI. Voice agents. Code generation. RAG. Legal AI. Healthcare AI. Privacy-first local hosting. We build it all.
+              For small businesses and solopreneurs. AI chatbots. Email automation. Content creation. Meeting notes. Lead capture. Under $500/month. We build it all.
             </p>
           </ScrollReveal>
 
@@ -97,22 +97,22 @@ export default function HomePage() {
           <div className="mx-auto max-w-4xl text-center">
             <ScrollReveal>
               <h2 className="font-display text-3xl font-bold text-oc-cream md:text-4xl lg:text-5xl">
-                13 AI systems we can build for you.
+                15 AI systems for small businesses.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-                Customer service AI. Voice agents that answer calls. Code generation. Document processing with RAG. Legal contract analysis. Healthcare clinical notes. Privacy-first local hosting.
+                Email templates. Meeting transcription. 24/7 chatbots. Content creation. Lead capture. Social media automation. Appointment booking. Under $500/month.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <div className="mt-12 grid gap-6 md:grid-cols-3">
                 {[
-                  { stat: 'Customer Service', desc: 'AI that handles support tickets, chat, email. 24/7. Instant responses.' },
-                  { stat: 'Voice Agents', desc: 'AI that answers phone calls. Sales, support, scheduling. Natural conversation.' },
-                  { stat: 'Code Generation', desc: 'AI that writes code. Faster development. Fewer bugs.' },
+                  { stat: '24/7 Chatbot', desc: 'Handles 80% of customer questions. $59-$299/month. Always available.' },
+                  { stat: 'Email Automation', desc: 'Templates, replies, follow-ups. Saves hours every week.' },
+                  { stat: 'Content Creation', desc: 'Blogs, social posts, marketing copy. 70% faster.' },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -127,7 +127,7 @@ export default function HomePage() {
 
             <ScrollReveal delay={0.3}>
               <p className="mt-8 text-lg text-oc-cream-muted">
-                Legal AI: 284% ROI, payback &lt;6 months (Lexis+ Forrester). RAG: $26M annual savings, 73% less research time. Healthcare AI: 451% ROI, 50%+ less documentation. Privacy-first local hosting: 52–75% savings vs cloud.
+                Meeting transcription. Lead qualification. Social media scheduling. Appointment booking. CRM automation. All under $500/month total.
               </p>
             </ScrollReveal>
 
@@ -268,7 +268,7 @@ export default function HomePage() {
               Why us
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-              We're new. 0 clients. But these 13 systems are real and making millions. We can build any of them.
+              We're new. 0 clients. But these 15 systems work for small businesses under 50 people.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/careers" className="text-sm font-medium text-oc-cyan hover:underline">

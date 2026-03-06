@@ -252,10 +252,10 @@ export default function ServicesPage() {
               What We Build
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              13 systems. Real results.
+              13 AI systems we build
             </h2>
             <p className="text-oc-cream-muted max-w-3xl mb-12">
-              Customer service AI: $40M saved. Code generation: $2B ARR. Voice agents: 391% ROI. Legal: 284% ROI. Healthcare: 451% ROI. RAG: $26M saved. Privacy-first local: 52-75% cheaper.
+              Customer service AI. Voice agents. Code generation. Legal contract analysis. Healthcare clinical notes. RAG document search. Privacy-first local hosting. Cybersecurity. Process automation. Revenue intelligence. And more.
             </p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
