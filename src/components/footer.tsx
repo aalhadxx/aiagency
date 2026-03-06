@@ -11,6 +11,7 @@ const FOOTER_LINKS = [
   { href: "/blog", label: "Blog" },
   { href: "/manifesto", label: "About" },
   { href: "/contact", label: "Contact" },
+  { href: "/careers", label: "Careers" },
 ];
 
 const SOCIAL_LINKS = [
