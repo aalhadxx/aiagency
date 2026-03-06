@@ -21,15 +21,15 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.1}>
             <h1 className="font-display text-5xl font-bold tracking-tight text-oc-cream sm:text-6xl md:text-7xl">
-              We copy AI that's already working.
+              Klarna saved $40M with AI.
               <br />
-              <span className="gradient-text">Then rebuild it for you.</span>
+              <span className="gradient-text">You can too.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-oc-cream-muted md:text-xl">
-              Klarna saved $40M with customer service AI. Cursor is at $2B ARR. Voice agents get 391% ROI. We find the people who built this and get them to build yours.
+              Customer service AI. Voice agents. Code generation. Legal, healthcare. Privacy-first local hosting. If someone's making millions with it, we can build it for you.
             </p>
           </ScrollReveal>
 
@@ -97,7 +97,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-4xl text-center">
             <ScrollReveal>
               <h2 className="font-display text-3xl font-bold text-oc-cream md:text-4xl lg:text-5xl">
-                OpenClaw is one thing. We build everything.
+                These companies are printing money with AI.
               </h2>
             </ScrollReveal>
 
