@@ -76,7 +76,13 @@ export function AINewsWidget() {
   }
 
   if (!news || news.articles.length === 0) {
-    return null;
+    return (
+      <div className="rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 p-8 mb-16">
+        <p className="text-oc-cream-muted text-center">
+          AI news feed loading... Check back soon!
+        </p>
+      </div>
+    );
   }
 
   return (
