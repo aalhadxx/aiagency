@@ -14,6 +14,7 @@ import {
 } from '@/lib/blog';
 import { BlogSearchFilter } from '@/components/blog/BlogSearchFilter';
 import { BlogNewsletterSignup } from '@/components/blog/BlogNewsletterSignup';
+import { AINewsWidget } from '@/components/blog/AINewsWidget';
 import { Suspense } from 'react';
 import { ScrollReveal } from '@/components/scroll-reveal';
 import { createPageMetadata } from '@/lib/metadata';
@@ -83,6 +84,9 @@ export default async function BlogPage({ searchParams }: PageProps) {
                         </Suspense>
                     </div>
                 </ScrollReveal>
+
+                {/* AI News Feed - only show on main blog page */}
+                {!q && !tag && !category && <AINewsWidget />}
 
                 {/* Featured post hero */}
                 {featuredPost && (
