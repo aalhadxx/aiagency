@@ -29,7 +29,7 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-oc-cream-muted md:text-xl">
-              For small businesses and solopreneurs. AI chatbots. Email automation. Content creation. Meeting notes. Lead capture. Under $500/month. We build it all.
+              63 AI systems for small businesses. Chatbots. Email automation. Content creation. Lead capture. Sales follow-up. All under $500/month. We build it.
             </p>
           </ScrollReveal>
 
@@ -97,13 +97,13 @@ export default function HomePage() {
           <div className="mx-auto max-w-4xl text-center">
             <ScrollReveal>
               <h2 className="font-display text-3xl font-bold text-oc-cream md:text-4xl lg:text-5xl">
-                15 AI systems for small businesses.
+                63 AI systems for small businesses.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
               <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-                Email templates. Meeting transcription. 24/7 chatbots. Content creation. Lead capture. Social media automation. Appointment booking. Under $500/month.
+                AI that writes your emails. AI that answers customer calls. AI that creates blog posts. AI that qualifies leads. AI that books appointments. AI that designs graphics. AI that tracks competitors. 63 systems. All under $500/month.
               </p>
             </ScrollReveal>
 
@@ -268,7 +268,7 @@ export default function HomePage() {
               Why us
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-oc-cream-muted">
-              We're new. 0 clients. But these 15 systems work for small businesses under 50 people.
+              We're new. 0 clients. But these 63 systems work for small businesses under 50 people.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/careers" className="text-sm font-medium text-oc-cyan hover:underline">
