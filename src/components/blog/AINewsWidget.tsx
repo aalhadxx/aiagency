@@ -35,16 +35,32 @@ export function AINewsWidget() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   useEffect(() => {
-    fetch(selectedCategory === 'all' ? '/api/news' : `/api/news?category=${selectedCategory}`)
-      .then(res => res.json())
-      .then(data => {
-        setNews(data);
-        setLoading(false);
-      })
-      .catch(err => {
+    const fetchNews = async () => {
+      try {
+        const url = selectedCategory === 'all' ? '/api/news' : `/api/news?category=${selectedCategory}`;
+        const res = await fetch(url);
+        
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        
+        const data = await res.json();
+        
+        if (data.error || !data.articles) {
+          console.error('Invalid data:', data);
+          setNews({ updatedAt: new Date().toISOString(), totalArticles: 0, articles: [] });
+        } else {
+          setNews(data);
+        }
+      } catch (err) {
         console.error('Failed to load news:', err);
+        setNews({ updatedAt: new Date().toISOString(), totalArticles: 0, articles: [] });
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+    
+    fetchNews();
   }, [selectedCategory]);
 
   if (loading) {
