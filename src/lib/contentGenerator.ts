@@ -139,7 +139,7 @@ Structure:
 };
 
 export async function generateContent(request: ContentRequest): Promise<GeneratedContent> {
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
     const prompt = CONTENT_PROMPTS[request.contentType]
         .replace('{topic}', request.topic)
@@ -178,7 +178,7 @@ export async function generateContent(request: ContentRequest): Promise<Generate
 }
 
 export async function generateSEOMetadata(content: string, primaryKeyword: string) {
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     const prompt = `Given this blog post content, generate SEO metadata:
 
