@@ -19,6 +19,17 @@ const nextConfig = {
         hostname: "assets.basehub.com",
         pathname: "/**",
       },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8080",
+        pathname: "/api/files/**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.trycloudflare.com",
+        pathname: "/api/files/**",
+      },
     ],
   },
 }
