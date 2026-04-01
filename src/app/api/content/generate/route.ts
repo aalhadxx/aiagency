@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { RateLimiterMemory } from 'rate-limiter-flexible';
 import { generateContent, generateSEOMetadata, type ContentRequest } from '@/lib/contentGenerator';
-import { createMarkdownFile, generateSlug, fileExists } from '@/lib/markdownWriter';
+import { createPost, getPostBySlug, generateSlug } from '@/lib/pocketbase';
 
 // Rate limiter: 10 requests per hour per IP
 const rateLimiter = new RateLimiterMemory({
@@ -78,48 +78,49 @@ export async function POST(request: NextRequest) {
         );
         console.log(`✓ SEO metadata generated`);
 
-        // Generate slug and check if file exists
+        // Generate slug and check if exists
         let slug = generateSlug(seoMetadata.slug || generatedContent.title);
         let counter = 1;
-        while (await fileExists(slug)) {
+        while (await getPostBySlug(slug)) {
             slug = `${generateSlug(seoMetadata.slug || generatedContent.title)}-${counter}`;
             counter++;
         }
 
-        // Create markdown file
-        const currentDate = new Date().toISOString().split('T')[0];
-        const { filePath, url } = await createMarkdownFile(
+        // Create post in PocketBase
+        const post = await createPost({
+            title: generatedContent.title,
             slug,
-            {
-                title: generatedContent.title,
-                excerpt: generatedContent.excerpt,
-                date: currentDate,
-                author: author || 'AI Agency Team',
-                tags: generatedContent.tags,
-                keywords: generatedContent.keywords,
-                schema: generatedContent.schema,
-                featured: false,
-            },
-            generatedContent.content
-        );
+            content: generatedContent.content,
+            excerpt: generatedContent.excerpt,
+            status: 'published',
+            published_at: new Date().toISOString(),
+            author: author || 'AI Agency Team',
+            tags: generatedContent.tags,
+            keywords: generatedContent.keywords,
+            meta_title: seoMetadata.title || generatedContent.title,
+            meta_description: seoMetadata.description || generatedContent.excerpt.slice(0, 160),
+            featured: false,
+        });
 
-        console.log(`✓ Markdown file created: ${filePath}`);
+        console.log(`✓ Post published to PocketBase: ${post.id}`);
 
-        // TODO: Trigger social media posts (Phase 3)
-        // TODO: Add to newsletter queue (Phase 3)
+        // Trigger revalidation if configured
+        if (process.env.VERCEL_REVALIDATE_TOKEN) {
+            try {
+                await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/revalidate?slug=${slug}&secret=${process.env.VERCEL_REVALIDATE_TOKEN}`);
+            } catch (e) {
+                console.warn('Revalidation failed:', e);
+            }
+        }
 
         return NextResponse.json({
             success: true,
+            id: post.id,
             slug,
-            filePath,
-            url,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${slug}`,
             title: generatedContent.title,
             excerpt: generatedContent.excerpt,
-            socialPosts: {
-                linkedin: 'pending',
-                twitter: 'pending',
-            },
-            message: 'Content generated successfully. Rebuild required to see live.'
+            message: 'Content published successfully to PocketBase.'
         });
 
     } catch (error: any) {

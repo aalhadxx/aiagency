@@ -1,9 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import simpleGit from 'simple-git';
 import type { GeneratedContent } from './contentGenerator';
 
-const git = simpleGit();
 
 export type MarkdownMetadata = {
     title: string;
@@ -47,15 +45,7 @@ featured: ${metadata.featured || false}
     
     // Write file
     fs.writeFileSync(filePath, fullContent, 'utf-8');
-
-    // Git commit
-    try {
-        await git.add(filePath);
-        await git.commit(`Add blog post: ${metadata.title}`);
-        console.log(`✓ Committed: ${filePath}`);
-    } catch (error) {
-        console.warn('Git commit failed (may not be in a git repo):', error);
-    }
+    console.log(`✓ Blog post created: ${filePath}`);
 
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
     const url = `${baseUrl}/blog/${slug}`;
